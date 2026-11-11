@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Decathlon Next - Découvrez une nouvelle expérience du sport.">
+
+    <title>DECATHLON NEXT — Move Beyond</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.2/gsap.min.js" defer></script>
+
+    <!-- JavaScript -->
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Announcement bar -->
+    <div class="announcement">
+        <p>NEW COLLECTION 2026 — DISCOVER YOUR NEXT MOVE</p>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+
+        <a href="#" class="logo">
+            DECATHLON<span>.</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#collections">Collections</a>
+            <a href="#products">Produits</a>
+            <a href="#experience">Notre univers</a>
+            <a href="#newsletter">Newsletter</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="icon-button" id="searchToggle" aria-label="Rechercher">
+                <i data-lucide="search"></i>
+            </button>
+
+            <button class="icon-button" id="favoritesToggle" aria-label="Favoris">
+                <i data-lucide="heart"></i>
+                <span class="counter" id="favoriteCount">0</span>
+            </button>
+
+            <button class="icon-button cart-button" id="cartToggle" aria-label="Panier">
+                <i data-lucide="shopping-bag"></i>
+                <span class="counter" id="cartCount">0</span>
+            </button>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- Search panel -->
+    <div class="search-panel" id="searchPanel">
+        <div class="search-content">
+            <i data-lucide="search"></i>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Que recherchez-vous ?"
+                autocomplete="off"
+            >
+            <button id="closeSearch" aria-label="Fermer">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+    </div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-image"></div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    <span class="status-dot"></span>
+                    THE FUTURE OF MOVEMENT
+                </span>
+
+                <h1>
+                    MOVE<br>
+                    <span>BEYOND.</span>
+                </h1>
+
+                <p>
+                    Repousse tes limites. Explore de nouvelles sensations.
+                    Le sport ne connaît aucune frontière.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">
+                        Explorer la collection
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                    <a href="#experience" class="btn btn-outline">
+                        Notre univers
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="hero-bottom">
+                <span>01 — 03 / NEW GENERATION</span>
+                <span>DESIGNED FOR MOVEMENT ↓</span>
+            </div>
+
+            <div class="hero-index">01</div>
+
+        </section>
+
+        <!-- SPORT CATEGORIES -->
+        <section class="categories section" id="collections">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow dark-eyebrow">FIND YOUR ELEMENT</span>
+                    <h2>Explore ton <span>terrain.</span></h2>
+                </div>
+
+                <p>
+                    Chaque sport possède son univers.
+                    Trouve celui qui te correspond.
+                </p>
+            </div>
+
+            <div class="category-grid">
+
+                <a href="#products" class="category-card category-running" data-category="Running">
+                    <div class="category-info">
+                        <span>01 / PERFORMANCE</span>
+                        <h3>Running</h3>
+                        <span class="category-link">Explorer ↗</span>
+                    </div>
+                </a>
+
+                <a href="#products" class="category-card category-fitness" data-category="Fitness">
+                    <div class="category-info">
+                        <span>02 / ENERGY</span>
+                        <h3>Fitness</h3>
+                        <span class="category-link">Explorer ↗</span>
+                    </div>
+                </a>
+
+                <a href="#products" class="category-card category-outdoor" data-category="Outdoor">
+                    <div class="category-info">
+                        <span>03 / ADVENTURE</span>
+                        <h3>Outdoor</h3>
+                        <span class="category-link">Explorer ↗</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section class="products section" id="products">
+
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow dark-eyebrow">CURATED FOR YOU</span>
+                    <h2>Le meilleur du <span>moment.</span></h2>
+                </div>
+
+                <a href="#products" class="text-link">
+                    Tous les produits ↗
+                </a>
+            </div>
+
+            <div class="product-toolbar">
+
+                <div class="filters" id="filters">
+                    <button class="filter active" data-filter="All">Tout</button>
+                    <button class="filter" data-filter="Running">Running</button>
+                    <button class="filter" data-filter="Fitness">Fitness</button>
+                    <button class="filter" data-filter="Outdoor">Outdoor</button>
+                </div>
+
+                <span class="product-total" id="productTotal">
+                    0 produits
+                </span>
+
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <!-- Products generated by JavaScript -->
+            </div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <i data-lucide="search-x"></i>
+                <h3>Aucun résultat</h3>
+                <p>Essaie avec un autre mot-clé.</p>
+            </div>
+
+        </section>
+
+        <!-- EDITORIAL EXPERIENCE -->
+        <section class="experience" id="experience">
+
+            <div class="experience-image"></div>
+
+            <div class="experience-content">
+                <span class="eyebrow">MORE THAN A SPORT BRAND</span>
+
+                <h2>
+                    THE WORLD<br>
+                    IS YOUR<br>
+                    <span>PLAYGROUND.</span>
+                </h2>
+
+                <p>
+                    Le sport est une façon de découvrir le monde,
+                    de se dépasser et de vivre autrement.
+                    Chaque mouvement est un nouveau départ.
+                </p>
+
+                <a href="#collections" class="btn btn-light">
+                    Découvrir notre univers
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter section" id="newsletter">
+
+            <div>
+                <span class="eyebrow dark-eyebrow">STAY IN MOTION</span>
+                <h2>Move with us.</h2>
+                <p>Les nouveautés, les inspirations et les prochaines collections.</p>
+            </div>
+
+            <form id="newsletterForm" class="newsletter-form">
+                <input
+                    type="email"
+                    id="newsletterEmail"
+                    placeholder="Ton adresse e-mail"
+                    required
+                >
+                <button type="submit" aria-label="S'inscrire">
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+            <a href="#" class="logo footer-logo">
+                DECATHLON<span>.</span>
+            </a>
+
+            <p>MAKE EVERY MOVE COUNT.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 DECATHLON NEXT — CONCEPT DESIGN</span>
+            <span>MADE FOR THE NEXT GENERATION.</span>
+        </div>
+
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <aside class="cart-drawer" id="cartDrawer">
+
+        <div class="drawer-header">
+            <h2>Ton panier <span id="drawerCount">(0)</span></h2>
+            <button id="closeCart" aria-label="Fermer le panier">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">0,00 €</strong>
+            </div>
+
+            <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                Continuer
+                <i data-lucide="arrow-right"></i>
+            </button>
+
+            <p>Prototype de démonstration — aucun paiement réel.</p>
+        </div>
+
+    </aside>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">
+        <i data-lucide="check-circle"></i>
+        <span id="toastMessage">Produit ajouté</span>
+    </div>
+
+</body>
+</html>
